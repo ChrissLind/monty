@@ -1,8 +1,8 @@
 #include "monty.h"
 
-int main (int argc, char **argv)
+int main (__attribute__((unused)) int argc, char **argv)
 {
-    FILE *stream;
+    FILE *stream; 
     char *line = NULL;
     size_t len = 0;
     stack_t *tmp;
@@ -19,8 +19,8 @@ int main (int argc, char **argv)
     }
     while ((nread = getline(&line, &len, stream)) != -1) 
     {
-            arg1 = strtok(line, " ");
-            arg2 = strtok(NULL, " ");
+            arg1 = strtok(line, " \n");
+            arg2 = strtok(NULL, " \n");
             if (arg2 != NULL)
             {
                 val = atoi(arg2);
