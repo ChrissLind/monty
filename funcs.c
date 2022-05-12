@@ -83,3 +83,31 @@ void pint(stack_t **head, __attribute__ ((unused)) unsigned int n)
 	}
 
 }
+
+/**
+ * pop - deletes first node of stack
+ * @head: pointer to head node
+ * @n: unused
+ *
+ * Return: void
+ */
+
+void pop(stack_t **head, __attribute__ ((unused)) unsigned int n)
+{
+	extern int val;
+	stack_t *tmp = *head;
+
+	if (*head == NULL)
+	{
+		val = -5;
+	}
+	else
+	{
+		*head = (*head)->next;
+		free(tmp);
+		if (*head != NULL)
+		{
+			(*head)->prev = NULL;
+		}
+	}
+}

@@ -36,14 +36,14 @@ int main(int argc, char **argv)
 		val = verifier(arg1, arg2);
 		if (val < 0)
 		{
-			p_error(count);
+			p_error(count, arg1);
 			exit_prep(head, line, stream);
 			exit(EXIT_FAILURE);
 		}
 		head = diverter(head, arg1, val);
 		if (val < 0)
 		{
-			p_error(count);
+			p_error(count, arg1);
 			exit_prep(head, line, stream);
 			exit(EXIT_FAILURE);
 		}
